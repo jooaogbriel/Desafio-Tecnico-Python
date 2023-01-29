@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    background-color: rgba(0, 255, 0, 0);
+    padding: 2.5rem 10rem;
+    border: 2px solid white;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    width: 80%;
+  }
+  
+  li p {
+    font-weight: bold;
+  }
+  
+  table {
+    border: 1px solid white;
+  }
+  
+  th {
+    text-align: center;
+    background-color: #ffaa;
+    border-right: 1px solid white;
+  }
+  
+  td {
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    padding: 0.5rem 0.5rem;
+    background-color: rgba(0, 255, 255, 0.0);
+  }

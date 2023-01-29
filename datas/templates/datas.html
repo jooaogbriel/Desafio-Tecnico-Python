@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Transações</h1>
+    </header>
+
+    <br />
+    <ul>
+      {% for storage in storage_list %}
+
+      <li>
+        <h2>Loja: {{ storage.name}}</h2>
+        <p>Dono: {{storage.owner}}</p>
+        <table>
+          <tr class="table_header">
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Cartão</th>
+            <th>CPF</th>
+            <th>Data</th>
+            <th>Hora</th>
+          </tr>
+          {% for data in storage.datas %}
+          <tr>
+            <td>R$ {{data.value|floatformat:2}}</td>
+            <td>{{data.type_description|capfirst}}</td>
+            <td>{{data.card}}</td>
+            <td>{{data.cpf}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.hour}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <h3>Saldo: R$ {{storage.balance|floatformat:2}}</h3>
+      </li>
+      <hr />
+      <hr />
+      {% endfor %}
+    </ul>
+  </body>
+</html>

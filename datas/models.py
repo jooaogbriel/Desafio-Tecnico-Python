@@ -12,7 +12,7 @@ class Datas(models.Model):
     hour = models.TimeField()
 
     storage = models.ForeignKey(
-        'storege.Storage',
+        'storage.Storage',
         on_delete = models.CASCADE,
         related_name = 'datas'
     )

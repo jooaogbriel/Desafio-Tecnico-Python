@@ -3,14 +3,14 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render, redirect
 from .forms import UploadFileForm
-from .functions import get_stores_from_database, refresh_database
+from .functions import get_storage_from_database, refresh_database
 
 
 def datas(request):
     
-    data_list = get_stores_from_database()
+    data_list = get_storage_from_database()
 
-    return render(request, 'transactions.html', {'data_list': data_list})
+    return render(request, 'data.html', {'data_list': data_list})
 
 
 def arquivo(request):
